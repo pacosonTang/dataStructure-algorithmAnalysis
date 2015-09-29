@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-/* Âú×ãF(0)=0 ÇÒ F(X)=2F(X-1)+X^2 */
+/* æ»¡è¶³F(0)=0 ä¸” F(X)=2F(X-1)+X^2 */
+
 int F(int);
 
 int main()
