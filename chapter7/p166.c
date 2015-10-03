@@ -26,17 +26,17 @@ void InsertSort(ElementType A[], int N)
 
 main()
 {    
-    ElementType A[] = {34, 8, 64, 51, 32, 21, 8, 64};
+    ElementType A[] = {34, 8, 64, 51, 32, 21};
     char p[256];
     char* str = p;
     
     str = "initial array A: ";
     printf("%40s",str);
-    printArray(A, 8);
+    printArray(A, 6);
     printf("\n");
     
     str = "after insert sorting , array A: ";
     printf("%40s", str);
-    InsertSort(A, 8);
-    printArray(A, 8);
+    InsertSort(A, 6);
+    printArray(A, 6);
 }
