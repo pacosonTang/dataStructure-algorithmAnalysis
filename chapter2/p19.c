@@ -8,10 +8,10 @@ int maxSubsequenceSum(int A[], int N)
 
     maxSum = 0;
     for(i = 0; i < N; i++) 
-	{ 
+    { 
         thisSum = 0;
         for(j = i; j < N; j++) 
-		{    /* i划分出两个集合，j from i to N-1 */
+	{    /* i划分出两个集合，j from i to N-1 */
             thisSum += A[j];                            
             if(thisSum > maxSum)
                 maxSum = thisSum;
