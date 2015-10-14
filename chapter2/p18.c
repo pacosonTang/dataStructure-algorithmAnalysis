@@ -4,14 +4,14 @@
 
  int maxSubsequenceSum(int A[], int N)
  {
-	int thisSum, maxSum, i, j, k;
+    int thisSum, maxSum, i, j, k;
 	
     maxSum = 0;
-	for(i = 0; i < N; i++) 
+    for(i = 0; i < N; i++) 
     for(j = i; j < N; j++) {    /* i划分出两个集合，j from i to N-1 */         
-		thisSum = 0;
-		for(k = i; k <= j; k++)    /* k from i to j ， j在后半集合再划分集合 */
-			thisSum += A[k];
+	thisSum = 0;
+	for(k = i; k <= j; k++)    /* k from i to j ， j在后半集合再划分集合 */
+    	    thisSum += A[k];
             if(thisSum > maxSum)
                maxSum = thisSum;
 	}     
