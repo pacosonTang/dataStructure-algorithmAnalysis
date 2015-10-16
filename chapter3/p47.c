@@ -85,7 +85,14 @@ void pop(Stack s)
 		free(temp);
 	}
 }
-
+// get the value of to node in the stack 
+ElementType top(Stack s)
+{
+    if(!isEmpty(s))
+	return s->next->element;
+    Error("\n empty stack ");
+    return 0;
+}
 //print value of element in the stack s
 void printStack(Stack s)
 {
@@ -127,6 +134,9 @@ int main()
 	pop(s);
 	printStack(s);
 	
+	printf("\n test for acquiring the value of top node in the stack \n");	
+	printf("%4d", top(s));
+		
 	printf("\n test for making the stack empty  \n");	
 	makeEmpty(s);	
 	printStack(s);
