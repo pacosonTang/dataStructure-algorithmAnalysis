@@ -123,7 +123,8 @@ void infixToPostfix(Stack s1, Stack s2,char *expr)
 	{
 		//i++;	
 		if(ch == ')'){// if ch equals ')', pop elements in stack s2 between '(' and ')' into stack s1
-			while((top_t = top(s2)) != '(' ) {
+			while((top_t = top(s2)) != '(' ) 
+			{
 				push(top_t, s1);
 				push(' ', s1);
 				pop(s2);
@@ -134,13 +135,15 @@ void infixToPostfix(Stack s1, Stack s2,char *expr)
 
 		if(isOperator(ch)) // isOperator is true					
 		{ 
-			if(ch == '(') {
+			if(ch == '(') 
+			{
 				push(ch, s2); // push '(' into operator stack s2
 				flag = 1;
 				continue;
 			}			
 
-			while((top_t = top(s2)) != -1 && priorityBigger(top_t, ch) >= 0 && flag ==0) {							
+			while((top_t = top(s2)) != -1 && priorityBigger(top_t, ch) >= 0 && flag ==0) 
+			{							
 				pop(s2);
 				push(top_t, s1);
 				push(' ', s1);				
@@ -154,7 +157,8 @@ void infixToPostfix(Stack s1, Stack s2,char *expr)
 		}
 	}
 	// pop element in s2 and push it into s1
-	while(!isEmpty(s2)) {		
+	while(!isEmpty(s2)) 
+	{		
 		push(top(s2), s1);
 		push(' ', s1);
 		pop(s2);
