@@ -210,8 +210,7 @@ int main()
 	printf("\n test for executing 5 deQueue opeartions in the Queue \n");	
 	for(i=0; i<5; i++) {
 		deQueue(&temp,q);	
-		if(q->front->next)
-			printf("\n the value of element departing from the queue is %2d \n", temp);	
+		printf("\n the value of element departing from the queue is %2d \n", temp);	
 	}
 
 	
