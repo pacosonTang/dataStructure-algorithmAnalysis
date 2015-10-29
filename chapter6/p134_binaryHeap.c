@@ -20,6 +20,29 @@ struct BinaryHeap
 	ElementType *elements;		
 };
 
+void swap(ElementType *x, ElementType *y)
+{
+	ElementType temp;
+
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
+// percolating up the element when its value is less than parent
+void percolateUp(int index, BinaryHeap bh)
+{
+	int parent;	
+
+	parent = index / 2;
+	if(parent == 0 || bh->elements[parent] < bh->elements[index])
+		return;
+	else
+		swap(&bh->elements[parent], &bh->elements[index]); // switch the elements with index index and parent
+	
+	percolateUp(parent, bh);
+}
+
 //judge whether the BinaryHeap is full or not , also 1 or 0 
 int isFull(BinaryHeap bh)
 {
@@ -51,22 +74,15 @@ ElementType deleteMin(BinaryHeap bh)
 	
 	while(1) // there are 3 cases that the last one moving up has double, single or no children
 	{
-		if(2 * i > bh->size)
+		if(2 * i >= bh->size)
 			break;
 		i = bh->elements[2*i] < bh->elements[2*i+1] ? 2 * i : 2 * i + 1;
 		bh->elements[i/2] = bh->elements[i];
 	}		
-
-	if(bh->size % 2 == 0) //the last one has only one child
-	{		
-		bh->size -= 2; 
-		insert(lastElement, bh); // this statement must follow the bh->size -= 2 and why 2 ? for insertion will render bh->size plus one
-	}
-	else
-	{
-		bh->elements[i] = lastElement;
-		bh->size--;
-	}
+	
+	bh->elements[i] = lastElement;			
+	bh->size--;
+	percolateUp(i, bh);
 
 	return minimal;
 }
