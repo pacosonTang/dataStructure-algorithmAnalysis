@@ -2,7 +2,7 @@
 #include <math.h>
 
 
-// ¼ÆËã log ÒÔ2Îªµ×µÄ¶ÔÊý
+// è®¡ç®— log ä»¥2ä¸ºåº•çš„å¯¹æ•°
 double log2(double input)
 {	
 	return log(input) / log(2);	
