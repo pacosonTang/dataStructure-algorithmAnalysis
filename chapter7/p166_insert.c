@@ -9,16 +9,11 @@ void insert(int data[], int size)
 
 	for(p = 1; p < size; p++)
 	{
-		index = p - 1;
 		temp = data[p];
-		while(index >= 0 && temp < data[index])
-		{
+		for(index = p - 1; index >= 0 && temp < data[index]; index--)				
 			data[index+1] = data[index];
-			index--;
-		}
 		data[index+1] = temp;
 	}
-	
 }
 
 void printArray(int data[], int size)
