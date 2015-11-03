@@ -103,8 +103,39 @@ void deleteElement(int index, BinaryHeap bh)
 {
 	decreaseKey(index, Infinity, bh); // 1st step, decreaseKey operation placing the element under index upto the root	
 	deleteMin(bh); //2nd step, deleteMin deleting the element under the root;
+} 
+
+// get the left child of node under index with startup zero
+int leftChildFromZero(int index)
+{
+	return index * 2 + 1;
 }
  
+// percolating down the element when its value is greater than children (minimal heap)
+ //Attention: all of bh->elements starts from index 0
+ void percolateDownFromZero(int index, BinaryHeap bh)
+ {	
+	ElementType *data;
+	ElementType temp;
+	int size;	
+	int child;
+
+	data = bh->elements;
+	size = bh->size;
+
+	for(temp = data[index]; leftChildFromZero(index) < size; index = child)
+	{
+		child = leftChildFromZero(index);
+		if(child < size - 1 && data[child] > data[child+1])
+			child++;
+		if(temp > data[child])
+			data[index] = data[child];
+		else
+			break;
+	}
+	data[index] = temp;
+}
+
 // building the heap with data in array randomly
 void buildHeap(BinaryHeap bh)
 {
@@ -114,7 +145,7 @@ void buildHeap(BinaryHeap bh)
 	data = bh->elements;
 	
 	for(i = bh->size/2; i >= 0; i--)
-		percolateDownFromOne(i, bh);		
+		percolateDownFromZero(i, bh);		
 }
 
  int main()
@@ -196,12 +227,14 @@ void buildHeap(BinaryHeap bh)
 	deleteElement(3, bh);
 	printBinaryHeap(bh); // test over , Bingo!
 	 
+	// as you know, the build heap operation is identical with other operations
 	printf("\n\t=== test for building heap with {150, 80, 40, 30, 10, 70, 110, 100, 20, 90, 60, 50, 120, 140, 130} ===\n");
 	capacity = 16;
 	bh = initBinaryHeap(capacity);
 	bh->size = 15;
-	buildHeap(buildHeapData, bh);
-	printBinaryHeapFromZero(bh);*/
+	bh->elements = buildHeapData; 
+	buildHeap(bh);
+	printBinaryHeapFromZero(bh);
 
 	return 0;
 }

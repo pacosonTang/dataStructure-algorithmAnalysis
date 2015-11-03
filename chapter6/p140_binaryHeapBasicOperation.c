@@ -107,3 +107,24 @@ void printBinaryHeap(BinaryHeap bh)
 	}
 	printf("\n");
 }  
+
+//print the binary heap who starts from index 0
+void printBinaryHeapFromZero(BinaryHeap bh)
+{
+	int i;
+	ElementType *temp;
+	
+	if(!bh)
+		Error("printing execution failure, for binary heap is null, from func printBinaryHeap");	
+
+	temp = bh->elements;
+	for(i = 0; i < bh->capacity; i++)
+	{
+		printf("\n\t index[%d] = ", i);
+		if(i < bh->size)
+			printf("%d", bh->elements[i]);
+		else
+			printf("NULL");
+	}
+	printf("\n");
+}  

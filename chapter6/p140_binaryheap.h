@@ -16,6 +16,7 @@ int isEmpty(BinaryHeap bh);
 void percolateUp(int index, BinaryHeap bh);
 void percolateDownFromOne(int index, BinaryHeap bh);
 void printBinaryHeap(BinaryHeap bh);
+void printBinaryHeapFromZero(BinaryHeap bh);
 
 struct BinaryHeap 
 {
