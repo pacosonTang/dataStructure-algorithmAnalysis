@@ -141,7 +141,7 @@ void printPrim(WeightedTable* table, int size, int startVertex)
 		"path"
 	};
 
-	printf("\n\t === storage table related to Dijkstra alg as follows: === ");	
+	printf("\n\t === storage table related to Prim alg as follows: === ");	
 	printf("\n\t %6s%6s%9s%5s", str[0], str[1], str[2], str[3]);	
 	for(i=0; i<size; i++)
 	{		
@@ -175,7 +175,7 @@ int main()
 		{0, 0, 0, 4, 6, 1, 0},
 	};
 
-	printf("\n\n\t ====== test for dijkstra alg finding weighted shortest path from adjoining table ======\n");
+	printf("\n\n\t ====== test for Prim alg finding weighted shortest path from adjoining table ======\n");
 	adj = initAdjTable(size);		
 	
 	printf("\n\n\t ====== the initial weighted adjoining table is as follows:======\n");
