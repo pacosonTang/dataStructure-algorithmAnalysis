@@ -58,6 +58,9 @@ int main()
 	printAdjTable(adj, size); 
 	
 	dfs_undirected_graph(start-1);
+	for(i=0; i<size; i++) 	 
+	    if(!visited[i]) // if the graph is not interconnected, we should conduct multiple DFS towards the graph
+		dfs_undirected_graph(i);	
 	return 0;
 } 
 
