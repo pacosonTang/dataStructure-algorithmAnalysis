@@ -17,10 +17,12 @@ void dfs(Vertex vertex)
 		adjVertex = temp->next->vertex;
 		
 		if(visited[adjVertex]) // judge whether the adjVertes was visited before		
+		{
 			if(vertexIndex[vertex] < vertexIndex[adjVertex] && parent[vertex] != adjVertex)
 				insertAdj(backsides, adjVertex, vertex); // building back side, attention of condition of building back side above					
-
-		while(!visited[adjVertex])
+		}
+		//while(!visited[adjVertex])
+		else
 		{
 			parent[adjVertex] = vertex;
 			dfs(adjVertex);
