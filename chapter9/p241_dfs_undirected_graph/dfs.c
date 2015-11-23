@@ -18,8 +18,8 @@ void dfs(Vertex vertex)
 		
 		if(visited[adjVertex]) // judge whether the adjVertes was visited before		
 		{
-			if(vertexIndex[vertex] < vertexIndex[adjVertex] && parent[vertex] != adjVertex)
-				insertAdj(backsides, adjVertex, vertex); // building back side, attention of condition of building back side above					
+			if(vertexIndex[vertex] > vertexIndex[adjVertex] && parent[vertex] != adjVertex)
+				insertAdj(backsides, vertex, adjVertex); // building back side, attention of condition of building back side above					
 		}
 		//while(!visited[adjVertex])
 		else
