@@ -121,7 +121,7 @@ void findArticulate(Vertex vertex, int depth)
 		{
 			if(vertexIndex[vertex] > vertexIndex[adjVertex] && parent[vertex] != adjVertex) 	
 			{
-				parent[adjVertex] = vertex; // building back side, attention of condition of building back side above				
+				//parent[adjVertex] = vertex; // building back side, attention of condition of building back side above				
 				//ex vertex= 3, adjVertex = 0
 
 				// just for printing effect

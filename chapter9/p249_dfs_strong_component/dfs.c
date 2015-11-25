@@ -85,7 +85,7 @@ void strongComponent(Vertex vertex, int depth)
 		{
 			if(vertexIndex[vertex] > vertexIndex[adjVertex] && parent[vertex] != adjVertex) 	
 			{
-				parent[adjVertex] = vertex; // building back side, attention of condition of building back side above
+			//	parent[adjVertex] = vertex; // building back side, attention of condition of building back side above
 				
 				// just for printing effect
 				for(i = 0; i < depth; i++)  
@@ -141,7 +141,7 @@ void dfsPathSet(Vertex vertex, int depth)
 		{
 			if(vertexIndex[vertex] > vertexIndex[adjVertex] && parent[vertex] != adjVertex) 	
 			{
-				parent[adjVertex] = vertex; // building back side, attention of condition of building back side above
+				//parent[adjVertex] = vertex; // building back side, attention of condition of building back side above
 				
 				// just for printing effect
 				//for(i = 0; i < depth; i++)  
